@@ -68,6 +68,7 @@
 				</configuration>
 			</plugin>
 		</plugins>
+		<finalName>ussd-example</finalName>
 	</build>
 
 </project>

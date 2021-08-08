@@ -3,6 +3,7 @@ package com.tochie.ussdexample.services;
 import com.tochie.ussdexample.dto.Menu;
 import com.tochie.ussdexample.dto.MenuOption;
 import com.tochie.ussdexample.enums.MenuOptionAction;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.text.StringSubstitutor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -11,6 +12,7 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
+@Slf4j
 @Service
 public class UssdRoutingService {
     @Autowired
@@ -112,6 +114,7 @@ public class UssdRoutingService {
     public UssdSession checkAndSetSession(String sessionId, String
             serviceCode, String phoneNumber, String text) {
         UssdSession session = sessionService.get(sessionId);
+        log.error("Existing session id is : " + session);
 
         if (session != null) {
             session.setText(text);

@@ -12,7 +12,7 @@ import java.io.Serializable;
  * these keys will get two values for same key(1 orignal and 1 phantom)
  **/
 @Data
-@RedisHash(value = "sessions", timeToLive = 180)
+@RedisHash(value = "sessions", timeToLive = 60)
 public class UssdSession implements Serializable {
     private static final long serialVersionUID = 1L;
 
